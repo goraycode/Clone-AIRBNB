@@ -37,6 +37,25 @@ h3 {
   font-size: 1.8rem;
 }
 
+/*  btn -flotante */
+.btn-flotante {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: var(--claro);
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  color: var(--oscuro);
+  box-shadow: 0px 2px 3px black;
+  transition: all 500ms ease;
+}
+
+.btn-flotante.activo,
+.btn-flotante:hover {
+  background-color: var(--primario);
+  color: var(--claro);
+}
+
 /*  interfaz */
 .contenedor {
   max-width: 1100px;
@@ -241,18 +260,22 @@ h3 {
 
 /*  ------------- footer --------------------- */
 .footer {
-  margin-top: 1rem;
+  position: fixed;
+  bottom: -100%;
+  width: 100%;
   background-color: var(--claro);
   filter: drop-shadow(20px 5px 10px black);
-}
-.footer .contenedor {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  transition: bottom 500ms ease;
 }
 
-.nav-footer {
-  margin-top: 3rem;
+.footer.activo {
+  bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-footer {
+    padding: 3rem 0;
+  }
 }
 
 .nav-footer h3 {
@@ -262,4 +285,32 @@ h3 {
 .menu {
   display: flex;
   flex-direction: column;
+}
+.menu a {
+  text-decoration: none;
+  margin: 0.1rem 0;
+  color: var(--oscuro);
+}
+
+.sociales {
+  margin-bottom: 2rem;
+}
+
+.sociales ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+}
+
+.sociales ul li a {
+  margin: 0 0.5rem;
+  color: var(--oscuro);
+}
+
+.sociales ul li a:hover {
+  color: var(--primario);
+}
+
+.red {
+  font-size: 1.8rem;
 }
